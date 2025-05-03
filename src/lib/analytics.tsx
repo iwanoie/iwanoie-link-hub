@@ -9,3 +9,10 @@ export function AnalyticsScript({ token }: { token: string | undefined }) {
 		></script>
 	);
 }
+
+export const trackClick = (eventName: string) => {
+	if (typeof window !== 'undefined' && 'cf_beacon' in window) {
+		// @ts-ignore
+		window.cf_beacon?.send(eventName);
+	}
+};
