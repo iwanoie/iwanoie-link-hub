@@ -9,7 +9,7 @@ interface LinkGridProps {
 
 export default function LinkGrid({ links }: LinkGridProps) {
 	return (
-		<div className="flex min-h-[200px] w-full items-center justify-center py-20">
+		<div className="flex min-h-[200px] sm:min-h-[400px] w-full items-center justify-center py-20">
 			<div className="w-full max-w-3xl">
 				<DisplayCards cards={links} />
 			</div>
