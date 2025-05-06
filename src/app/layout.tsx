@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { ThemeProvider } from 'next-themes';
 import type { Metadata } from 'next';
 import links from '@/data/links';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://iwanoie-link-hub.vercel.app/'),
@@ -62,6 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</head>
 			<body className="min-h-screen bg-amber-50 dark:bg-slate-900 font-sans antialiased overflow-hidden">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+					{/* テーマトグル */}
+					<ThemeToggle />
 					{children}
 				</ThemeProvider>
 			</body>
