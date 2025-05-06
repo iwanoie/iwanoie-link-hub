@@ -20,7 +20,7 @@ const links: LinkItem[] = [
 	{
 		icon: <SiGooglehome className="text-green-500" />,
 		title: 'Little Rooms',
-		description: 'Rakuten description',
+		description: 'Little Rooms description',
 		date: 'Just now',
 		url: 'https://littlerooms.jp/iwanoie',
 		iconClassName: 'text-green-500',
@@ -32,7 +32,7 @@ const links: LinkItem[] = [
 	{
 		icon: <SiTiktok className="text-gray-500" />,
 		title: 'TikTok',
-		description: 'Rakuten description',
+		description: 'TikTok description',
 		date: 'Just now',
 		url: 'https://www.tiktok.com/@iwanoie_?_t=8lo4Egjpqa1&_r=1',
 		iconClassName: 'text-gray-500',
@@ -44,7 +44,7 @@ const links: LinkItem[] = [
 	{
 		icon: <SiGooglehome className="text-blue-500" />,
 		title: 'Ohouse',
-		description: 'Rakuten description',
+		description: 'Ohouse description',
 		date: 'Just now',
 		url: 'https://link.ohouse.com/5pmcjx',
 		iconClassName: 'text-blue-500',
