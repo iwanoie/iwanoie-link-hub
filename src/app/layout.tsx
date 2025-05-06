@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					}}
 				/>
 			</head>
-			<body className="min-h-screen bg-slate-50 dark:bg-slate-900 font-sans antialiased">
+			<body className="min-h-screen bg-amber-50 dark:bg-slate-900 font-sans antialiased">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					{children}
 				</ThemeProvider>
