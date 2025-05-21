@@ -1,11 +1,7 @@
 'use client';
 
-import { ReactNode } from 'react';
-import { SiGooglehome, SiRakuten, SiTiktok } from 'react-icons/si';
-import { Sparkles } from 'lucide-react';
-
 export type LinkItem = {
-	icon: ReactNode;
+	icon: 'rakutenroom' | 'tiktok' | 'littlerooms' | 'none';
 	title: string;
 	description: string;
 	date: string;
@@ -18,7 +14,7 @@ export type LinkItem = {
 
 const links: LinkItem[] = [
 	{
-		icon: <SiGooglehome className="text-yellow-500" />,
+		icon: 'littlerooms',
 		title: 'Little Rooms',
 		description: 'Explore my room',
 		date: 'Just now',
@@ -30,7 +26,7 @@ const links: LinkItem[] = [
 			"[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
 	},
 	{
-		icon: <SiTiktok className="text-blue-500" />,
+		icon: 'tiktok',
 		title: 'TikTok',
 		description: 'Watch my dog',
 		date: 'Just now',
@@ -42,7 +38,7 @@ const links: LinkItem[] = [
 			"[grid-area:stack] translate-x-12 translate-y-20 hover:translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
 	},
 	{
-		icon: <SiRakuten className="text-pink-500" />,
+		icon: 'rakutenroom',
 		title: 'Rakuten Room',
 		description: 'View my shopping list',
 		date: 'Just now',
