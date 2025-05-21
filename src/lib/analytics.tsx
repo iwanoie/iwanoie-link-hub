@@ -1,18 +1,43 @@
-export function AnalyticsScript({ token }: { token: string | undefined }) {
-	if (!token) return null;
+'use client';
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '';
+
+export function GoogleAnalytics() {
+	if (!GA_ID) return null;
 
 	return (
-		<script
-			defer
-			src={`https://static.cloudflareinsights.com/beacon.min.js`}
-			data-cf-beacon={`{"token": "${token}"}`}
-		></script>
+		<>
+			<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+			<script
+				dangerouslySetInnerHTML={{
+					__html: `
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+						gtag('config', '${GA_ID}');
+					`,
+				}}
+			/>
+		</>
 	);
 }
 
-export const trackClick = (eventName: string) => {
-	if (typeof window !== 'undefined' && 'cf_beacon' in window) {
-		// @ts-ignore
-		window.cf_beacon?.send(eventName);
+export const trackEvent = ({
+	action,
+	category,
+	label,
+	value,
+}: {
+	action: string;
+	category: string;
+	label: string;
+	value?: number;
+}) => {
+	if (typeof window !== 'undefined') {
+		window.gtag?.('event', action, {
+			event_category: category,
+			event_label: label,
+			value,
+		});
 	}
 };

@@ -1,12 +1,13 @@
 'use client';
 
-import { trackClick } from '@/lib/analytics';
+import { trackEvent } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 import { FiXSquare } from 'react-icons/fi';
+import { SiGooglehome, SiRakuten, SiTiktok } from 'react-icons/si';
 
 interface DisplayCardProps {
 	className?: string;
-	icon?: React.ReactNode;
+	icon?: 'rakutenroom' | 'tiktok' | 'littlerooms' | 'none';
 	title?: string;
 	description?: string;
 	date?: string;
@@ -16,23 +17,45 @@ interface DisplayCardProps {
 	titleClassName?: string;
 }
 
+function resolveIcon(name: string, iconClassName?: string) {
+	switch (name) {
+		case 'rakutenroom':
+			return <SiRakuten className={iconClassName} />;
+		case 'tiktok':
+			return <SiTiktok className={iconClassName} />;
+		case 'littlerooms':
+			return <SiGooglehome className={iconClassName} />;
+		default:
+			return <FiXSquare className={iconClassName} />;
+	}
+}
+
 function DisplayCard({
 	className,
-	icon = <FiXSquare className="size-4 text-red-500" />,
+	icon = 'none',
 	title = 'No Link',
 	description = 'The link is not registered yet',
 	date = 'Long ago...',
 	url = '',
-	iconClassName = 'text-orange-500',
+	iconClassName = 'text-red-500',
 	iconBgClassName = 'bg-orange-200',
 	titleClassName = 'text-orange-500',
 }: DisplayCardProps) {
+	const handleClick = () => {
+		if (!title) return;
+		trackEvent({
+			action: 'click',
+			category: 'outbound',
+			label: title,
+		});
+	};
+
 	return (
 		<a
 			href={url}
 			target="_blank"
 			rel="noopener noreferrer"
-			onClick={() => trackClick(`${title}_click`)}
+			onClick={handleClick}
 			className={cn(
 				"relative flex h-36 w-full max-w-[16rem] sm:max-w-[20rem] right-12 -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-4 py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-white/20 hover:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2",
 				className,
@@ -40,7 +63,7 @@ function DisplayCard({
 		>
 			<div>
 				<span className={cn('relative inline-block rounded-full p-1', iconBgClassName)}>
-					{icon}
+					{resolveIcon(icon, iconClassName)}
 				</span>
 				<p className={cn('text-lg font-medium', titleClassName)}>{title}</p>
 			</div>

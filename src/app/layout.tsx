@@ -1,9 +1,8 @@
 import './globals.css';
-import { AnalyticsScript } from '@/lib/analytics';
+import { GoogleAnalytics } from '@/lib/analytics';
 import Script from 'next/script';
 import { ThemeProvider } from 'next-themes';
 import type { Metadata } from 'next';
-import links from '@/data/links';
 import ThemeToggle from '@/components/ThemeToggle';
 
 export const metadata: Metadata = {
@@ -36,8 +35,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="ja" suppressHydrationWarning>
 			<head>
-				{/* Cloudflare analytics script */}
-				<AnalyticsScript token={process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN} />
+				{/* Google analytics script */}
+				<GoogleAnalytics />
 				{/* JSON‑LD 構造化データ */}
 				<Script
 					id="ld-json"
