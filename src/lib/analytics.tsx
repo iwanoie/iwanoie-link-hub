@@ -3,7 +3,10 @@
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '';
 
 export function GoogleAnalytics() {
-	if (!GA_ID) return null;
+	if (!GA_ID) {
+		console.warn('GA4 ID is not set. Please check NEXT_PUBLIC_GA_MEASUREMENT_ID.');
+		return null;
+	}
 
 	return (
 		<>
