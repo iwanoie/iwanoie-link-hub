@@ -19,11 +19,11 @@ const links: LinkItem[] = [
 		description: 'Explore my room',
 		date: 'Just now',
 		url: 'https://littlerooms.jp/iwanoie',
-		iconClassName: 'text-yellow-500',
-		iconBgClassName: 'bg-yellow-200',
-		titleClassName: 'text-yellow-500',
+		iconClassName: 'text-amber-500',
+		iconBgClassName: 'bg-amber-100/80',
+		titleClassName: 'text-amber-600',
 		className:
-			"[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
+			"bg-amber-50/70 hover:border-amber-300 [grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
 	},
 	{
 		icon: 'tiktok',
@@ -31,11 +31,11 @@ const links: LinkItem[] = [
 		description: 'Watch my dog',
 		date: 'Just now',
 		url: 'https://www.tiktok.com/@iwanoie_?_t=8lo4Egjpqa1&_r=1',
-		iconClassName: 'text-blue-500',
-		iconBgClassName: 'bg-blue-200',
-		titleClassName: 'text-blue-500',
+		iconClassName: 'text-sky-500',
+		iconBgClassName: 'bg-sky-100/80',
+		titleClassName: 'text-sky-600',
 		className:
-			"[grid-area:stack] translate-x-12 translate-y-20 hover:translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
+			"bg-sky-50/70 hover:border-sky-300 [grid-area:stack] translate-x-12 translate-y-20 hover:translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
 	},
 	{
 		icon: 'rakutenroom',
@@ -43,10 +43,11 @@ const links: LinkItem[] = [
 		description: 'View my shopping list',
 		date: 'Just now',
 		url: 'https://room.rakuten.co.jp/ssikt.room',
-		iconClassName: 'text-pink-500',
-		iconBgClassName: 'bg-pink-200',
-		titleClassName: 'text-pink-500',
-		className: '[grid-area:stack] translate-x-24 translate-y-40 hover:translate-y-30',
+		iconClassName: 'text-rose-500',
+		iconBgClassName: 'bg-rose-100/80',
+		titleClassName: 'text-rose-600',
+		className:
+			'bg-rose-50/70 border-rose-300 [grid-area:stack] translate-x-24 translate-y-40 hover:translate-y-30',
 	},
 ];
 
