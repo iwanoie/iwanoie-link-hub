@@ -4,6 +4,14 @@ import Script from 'next/script';
 import { ThemeProvider } from 'next-themes';
 import type { Metadata } from 'next';
 import ThemeToggle from '@/components/ThemeToggle';
+import { Lexend } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const lexend = Lexend({
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-lexend',
+});
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://iwanoie-link-hub.vercel.app/'),
@@ -60,7 +68,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					}}
 				/>
 			</head>
-			<body className="min-h-screen bg-amber-50 dark:bg-slate-900 font-sans antialiased overflow-hidden">
+			<body
+				className={cn(
+					'min-h-screen bg-orange-200 dark:bg-slate-600 antialiased overflow-hidden',
+					lexend.className,
+				)}
+			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					{/* テーマトグル */}
 					<ThemeToggle />
